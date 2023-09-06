@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta id="cross-request-sign" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="yapi接口管理,api管理,接口管理,api,接口,接口文档,api文档,接口管理系统" />
+    <meta name="description"
+        content="YApi 是高效、易用、功能强大的 api 管理平台，旨在为开发、产品、测试人员提供更优雅的接口管理服务。可以帮助开发者轻松创建、发布、维护 API，YApi 还为用户提供了优秀的交互体验，开发人员只需利用平台提供的接口数据写入工具以及简单的点击操作就可以实现接口的管理。" />
+    <title>HolyGrail_grid</title>
+
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    .HolyGrail {
+        display: grid;
+        grid-template-rows: 100px 1fr 100px;
+        min-height: 100vh;
+        
+        >header {
+            background-color: #4dc7ec;
+            /* height: 100px; */
+        }
+
+        >footer {
+            background-color: #f8d29d;
+            /* height: 100px; */
+        }
+
+        .HolyGrail-body {
+            display: grid;
+            grid-template-columns: 200px 1fr 200px;
+        }
+
+        .HolyGrail-nav {
+            /* width: 200px; */
+            grid-column: 1/2;
+            grid-row: 1/2;
+            background-color: #0376c2;
+        }
+
+        .HolyGrail-ads {
+            /* width: 200px; */
+            background-color: #b5a87f;
+
+        }
+
+        .HolyGrail-content {
+            background-color: #d0e4a9;
+            outline: 1px solid;
+            grid-column: 2/3;
+
+        }
+    }
+</style>
+
+<body class="HolyGrail">
+    <header>header</header>
+    <div class="HolyGrail-body">
+        <!-- <nav class="HolyGrail-nav">nav</nav>
+        <aside class="HolyGrail-ads">aside</aside> -->
+        <main class="HolyGrail-content">
+            CSS Grid brought us a new unit called "fractional" or fr. An "fr" is a flexible sizing unit that can be used
+            with other units, such as percentage, or alone. 1fr means the element should take up one fraction of the
+            remaining or unassigned space.CSS Grid brought us a new unit called "fractional" or fr. An "fr" is a
+            flexible sizing unit that can be used with other units, such as percentage, or alone. 1fr means the element
+            should take up one fraction of the remaining or unassigned space.
+        </main>
+        <nav class="HolyGrail-nav">nav</nav>
+        <aside class="HolyGrail-ads">aside</aside>
+    </div>
+    <footer>footer</footer>
+</body>
+
+
+
+</html>

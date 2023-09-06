@@ -1,0 +1,19 @@
+WEBVTT
+
+STYLE
+::cue(.chinese-line) {
+  font-size: 4vh;
+}
+
+::cue(.english-line) {
+  /* 可以在此处定义英文文本的样式，如字体、大小等 */
+  color: red;
+}
+
+00:00:01.000 --> 00:00:05.000
+<vtt-cue class="chinese-line">这是一个示例字幕。</vtt-cue>
+<vtt-cue class="english-line">This is an example subtitle.</vtt-cue>
+
+00:00:06.000 --> 00:00:10.000
+<vtt-cue class="chinese-line">这是另一个示例字幕，中文行比英文行字体大。</vtt-cue>
+<vtt-cue class="english-line">This is another example subtitle with larger Chinese text.</vtt-cue>

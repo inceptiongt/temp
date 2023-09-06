@@ -1,0 +1,45 @@
+{
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "port": 1089,
+            "protocol": "socks",
+            "settings": {
+                "udpEnabled": true
+            }
+        },
+        {
+            "listen": "127.0.0.1",
+            "port": 8889,
+            "protocol": "http"
+        }
+    ],
+    "log": {
+        "access": {
+            "path": "/Users/gt/.v2ray/access.log",
+            "type": "File"
+        },
+        "error": {
+            "path": "/Users/gt/.v2ray/error.log",
+            "type": "File"
+        }
+    },
+    "outbounds": [
+        {
+            "protocol": "vmess",
+            "settings": {
+                "address": "362201.xyz",
+                "port": 443,
+                "uuid": "2dc2b526-f51d-40c7-8fa3-e074a28b74e2"
+            },
+            "streamSettings": {
+                "security": "tls",
+                "transport": "ws",
+                "transportSettings": {
+                    "path": "/gtt"
+                }
+            },
+            "tag": "gaotong2991"
+        }
+    ]
+}

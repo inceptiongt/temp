@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta id="cross-request-sign" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="yapi接口管理,api管理,接口管理,api,接口,接口文档,api文档,接口管理系统" />
+    <meta name="description"
+        content="YApi 是高效、易用、功能强大的 api 管理平台，旨在为开发、产品、测试人员提供更优雅的接口管理服务。可以帮助开发者轻松创建、发布、维护 API，YApi 还为用户提供了优秀的交互体验，开发人员只需利用平台提供的接口数据写入工具以及简单的点击操作就可以实现接口的管理。" />
+    <title>TEMP</title>
+
+</head>
+<style>
+    .body {
+        width: 400px;
+        margin: 0 auto;
+        margin-bottom: 100px;
+        outline: 1px yellow solid;
+    }
+
+    .outer,
+    .text {
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+        background: gray;
+        padding: 30px 15px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .text {
+        background-color: aquamarine;
+    }
+
+    .warp {
+        width: 50%;
+        height: 100%;
+        /* background: gray; */
+        display: inline-block;
+    }
+
+    .inner {
+        margin: 0 15px;
+        outline: 1px solid;
+        height: 100%;
+        box-sizing: outline-box;
+        background: azure;
+    }
+
+    .box {
+        outline: 1px solid;
+        height: 50px;
+    }
+
+    .prev {
+        float: left;
+    }
+
+    .next {
+        float: right;
+    }
+
+    .title {
+        margin: 0 70px;
+        text-align: center;
+    }
+
+    /* .grandpa{
+        width: 200px;
+        margin: 0 auto;
+    } */
+
+    .father {
+        /* height: 64px; */
+        outline: 1px solid #444;
+    }
+
+    .father::after {
+        content: '';
+        /* display: block; */
+        clear: both;
+    }
+
+    .float {
+        float: left;
+        /* width: 200px;
+        height: 100px; */
+    }
+
+    .float img {
+        width: 80px;
+        /* height: 64px; */
+    }
+
+
+    .box1 {
+        height: 128px;
+        outline: 1px solid;
+    }
+
+    .box1>img {
+        height: 96px;
+        vertical-align: middle;
+    }
+
+    .container {
+        width: 200px;
+        outline: 1px solid;
+        position: relative;
+    }
+
+    .box37 {
+        /* position: absolute; */
+    }
+
+    .box50 {
+        .box {
+            overflow: hidden;
+        }
+
+        .img {
+            width: 128px;
+            height: 96px;
+        }
+
+        /* 左浮动 */
+        .box-left>img {
+            float: left;
+        }
+
+        .box-left>p {
+            margin-left: 140px;
+        }
+
+        /* 右浮动，但图片DOM在前 */
+        .box-right>img {
+            float: right;
+        }
+
+        .box-right>p {
+            margin-right: 140px;
+        }
+
+        /* 右浮动，图片DOM在后，和视觉表现一致 */
+        .box-right-same>.full {
+            width: 100%;
+            float: left;
+        }
+
+        .box-right-same>.full>p {
+            margin-right: 140px;
+        }
+
+        .box-right-same>img {
+            float: left;
+            margin-left: -128px;
+        }
+    }
+
+    .box22 {
+        .container22 {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .container22::after {
+            content: "";
+            flex: auto;
+        }
+
+        .list {
+            width: 24%;
+            height: 100px;
+            background-color: skyblue;
+            margin-top: 15px;
+        }
+    }
+
+    .box34 {
+        .wrap {
+            width: 300px;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wrap>ul {
+            position: absolute;
+            white-space: nowrap;
+        }
+
+        .wrap li {
+            display: inline-block;
+
+            >img {
+                width: 256px;
+            }
+        }
+
+        li>img {
+            width: 256px;
+        }
+    }
+
+
+    #container {
+        display: grid;
+        outline: 1px solid #000;
+        grid-template-columns: repeat(3, 30%);
+        grid-template-rows: 50px 50px 50px;
+        grid-template-areas: 'a a a'
+            'b b b'
+            'c c c';
+    }
+
+    .item {
+        font-size: 2em;
+        text-align: center;
+        outline: 1px solid #e5e4e9;
+    }
+
+    .item-1 {
+        background-color: #ef342a;
+    }
+
+    .item-2 {
+        background-color: #f68f26;
+    }
+
+    .item-3 {
+        background-color: #4ba946;
+    }
+
+    .item-4 {
+        background-color: #0376c2;
+    }
+
+    .item-5 {
+        background-color: #c077af;
+    }
+
+    .item-6 {
+        background-color: #f8d29d;
+    }
+
+    .item-7 {
+        background-color: #b5a87f;
+    }
+
+    .item-8 {
+        background-color: #d0e4a9;
+    }
+
+    .item-9 {
+        background-color: #4dc7ec;
+    }
+
+    html,
+    body {
+        /* height: 100%; */
+        margin: 0;
+    }
+
+    .HolyGrail {
+        >header {
+            background-color: #4dc7ec;
+            height: 100px;
+        }
+
+        >footer {
+            background-color: #f8d29d;
+            clear: both;
+            height: 100px;
+        }
+
+        .HolyGrail-body {
+            position: relative;
+            height: 100%;
+        }
+
+        .HolyGrail-nav {
+            width: 200px;
+            background-color: #0376c2;
+            /* float: left; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%
+        }
+
+        .HolyGrail-ads {
+            width: 200px;
+            background-color: #b5a87f;
+            /* float: right; */
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%
+        }
+
+        .HolyGrail-content {
+            background-color: #d0e4a9;
+            margin: 0 200px;
+            outline: 1px solid;
+            /* height: 100%; */
+            min-height: 550px;
+        }
+    }
+
+    .box18 {
+        overflow: hidden;
+        width: 340px;
+        margin: 0 auto;
+        .ul{}
+            .li {
+                float: left;
+                width: 100px;
+                margin-right: 20px;
+            }
+        
+
+
+    }
+</style>
+
+<body class="HolyGrail">
+    <header>header</header>
+    <div class="HolyGrail-body">
+        <!-- <nav class="HolyGrail-nav">nav</nav>
+        <aside class="HolyGrail-ads">aside</aside> -->
+        <main class="HolyGrail-content">
+
+            <div class="outer">
+                <div class="warp">
+                    <div class="inner">dfsdf</div>
+                </div>
+                <div class="warp">
+                    <div class="inner">dfsdf</div>
+                </div>
+            </div>
+            <div class="text">
+                <span>多少发按时发生大是大非</span>
+            </div>
+
+            <div class="box">
+                <a href class="prev">&laquo; 上一章</a>
+                <a href class="next">下一章 &raquo;</a>
+                <h3 class="title">第112章 动物环绕</h3>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="grandpa">
+                <div class="father">
+                    <div class="float">
+                        <img src="./zxx.jpeg">
+                        <span>我</span>
+                        <div>我是帅哥我飘了</div>
+                    </div>
+                    <div>我第说我是帅哥，可真帅，可真帅，可真帅，可真帅</div>
+                </div>
+                <div>我爸的弟弟说我是帅哥</div>
+            </div>
+
+            <div style="color: aqua;">爷爷的弟弟说我是帅哥，爷爷的弟弟说我是帅哥爷爷的弟弟说我是帅哥爷爷的弟弟说我是帅哥爷爷的弟弟说我是帅哥爷爷的弟弟说我是帅哥</div>
+
+            <div class="box1">
+                <span>字幕x</span><img src="./zxx.jpeg">
+            </div>
+
+            <div class="container">
+                <div class="box37">
+                    范德萨发gas范德萨范德萨辅导辅导毒贩夫妇对方的范德萨发gas范德萨范德萨辅导辅导毒贩夫妇对方的范德萨发gas范德萨范德萨辅导辅导毒贩夫妇对方的范德萨发gas范德萨范德萨辅导辅导毒贩夫妇对方的
+                </div>
+            </div>
+
+            <div class="26">
+                <div class="father26">
+                    <div class="son26"></div>
+                </div>
+            </div>
+
+
+            <div class="box50">
+                <h4>左侧固定</h4>
+                <div class="box box-left">
+                    <img src="./zxx.jpeg" class="img">
+                    <p>DOM文档流中，图片定宽在左侧，文字内容在右侧，和视觉呈现的前后顺序一致。</p>
+                </div>
+
+                <h4>右侧固定-DOM顺序相反</h4>
+                <div class="box box-right">
+                    <img src="./zxx.jpeg" class="img">
+                    <p>DOM文档流中，图片定宽在左侧，视觉上却在右侧，顺序表现不一致。</p>
+                </div>
+
+                <h4>右侧固定-DOM顺序和视觉一致</h4>
+                <div class="box box-right-same">
+                    <div class="full">
+                        <p>DOM文档流中，图片定宽在右侧，视觉呈现也在右侧，顺便表现此时一致。</p>
+                    </div>
+                    <img src="./zxx.jpeg" class="img">
+                </div>
+            </div>
+
+            <div class="box22">
+                <div class="container22">
+                    <div class="list"></div>
+                    <div class="list"></div>
+                    <div class="list"></div>
+                    <div class="list"></div>
+                    <div class="list"></div>
+                    <div class="list"></div>
+                    <div class="list"></div>
+                </div>
+            </div>
+            <div>sfsfdfsfdf</div>
+            <span>spansdfsfsdfdsf</span>
+
+            <div class="box34">
+                <div id="wrap" class="wrap">
+                    <ul>
+                        <li><img src="https://demo.cssworld.cn/images/common/l/1.jpg"></li>
+                        <li><img src="https://demo.cssworld.cn/images/common/l/1.jpg"></li>
+                        <li><img src="https://demo.cssworld.cn/images/common/l/1.jpg"></li>
+                        <li><img src="https://demo.cssworld.cn/images/common/l/1.jpg"></li>
+                        <li><img src="https://demo.cssworld.cn/images/common/l/1.jpg"></li>
+                    </ul>
+                </div>
+            </div>
+            <div>sdfdsfdfdf</div>
+
+
+            <div id="container">
+                <div class="item item-1">1</div>
+                <div class="item item-2">2</div>
+                <div class="item item-3">3</div>
+                <div class="item item-4">4</div>
+                <div class="item item-5">5</div>
+                <div class="item item-6">6</div>
+                <div class="item item-7">7</div>
+                <div class="item item-8">8</div>
+                <div class="item item-9">9</div>
+            </div>
+
+            <div class="box18">
+                <div class="ul">
+                    <div class="li">1</div>
+                    <div class="li">1</div>
+                    <div class="li">1</div>
+
+                </div>
+                    
+            </div>
+
+
+
+        </main>
+        <nav class="HolyGrail-nav">nav</nav>
+        <aside class="HolyGrail-ads">aside</aside>
+    </div>
+    <footer>footer</footer>
+</body>
+
+
+
+</html>

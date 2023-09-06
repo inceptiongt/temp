@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta  id="cross-request-sign"  charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="keywords" content="yapi接口管理,api管理,接口管理,api,接口,接口文档,api文档,接口管理系统" />
+<meta name="description" content="YApi 是高效、易用、功能强大的 api 管理平台，旨在为开发、产品、测试人员提供更优雅的接口管理服务。可以帮助开发者轻松创建、发布、维护 API，YApi 还为用户提供了优秀的交互体验，开发人员只需利用平台提供的接口数据写入工具以及简单的点击操作就可以实现接口的管理。" />
+<title>YApi-高效、易用、功能强大的可视化接口管理平台</title>
+
+</head>
+<body>
+<!-- <div id="yapi" style="height: 100%;"></div>
+<script>
+    var port = 3000
+</script>
+
+<script type="module" src="./b.js">
+</script> -->
+<h1>Example 2</h1>
+
+  <!-- <h1>Example 2: Watching the GC work.</h1> -->
+
+  <p>Look at the time spent by the GC.</p>
+
+  <p><button onclick="start()">Start creating chunks</button></p>
+
+  <p><button onclick="stop()">Stop!</button></p>
+  <script>
+  'use strict';
+
+var intervalId = null, params;
+
+function createChunks() {
+    var div, foo, i, str;
+    for (i = 0; i < 20; i++) {
+        div = document.createElement('div');
+        str = new Array(1000000).join('x');
+        foo = {
+            str: str,
+            div: div
+        };
+        div.foo = foo;
+    }
+}
+
+function start() {
+    if (intervalId) {
+        return;
+    }
+    intervalId = setInterval(createChunks, 1000);
+}
+
+function stop() {
+    if (intervalId) {
+        clearInterval(intervalId);
+    }
+    intervalId = null;
+}
+</script>
+  <hr>
+  <pre>
+'use strict';
+
+var intervalId = null, params;
+
+function createChunks() {
+    var div, foo, i, str;
+    for (i = 0; i < 20; i++) {
+        div = document.createElement("div");
+        str = new Array(1000000).join('x');
+        foo = {
+            str: str,
+            div: div
+        };
+        div.foo = foo;
+    }
+}
+
+function start() {
+    if (intervalId) {
+        return;
+    }
+    intervalId = setInterval(createChunks, 1000);
+}
+
+function stop() {
+    if (intervalId) {
+        clearInterval(intervalId);
+    }
+    intervalId = null;
+}
+</pre>
+</body>
+</html>

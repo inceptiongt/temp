@@ -1,0 +1,25 @@
+{
+  "name": "temp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1.js",
+  "type": "module",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "http-server": "^14.1.0",
+    "langchain": "^0.0.118",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "node-fetch": "^3.0.0",
+    "rap": "^1.3.1",
+    "react": "^17.0.2",
+    "umi": "^4.0.0-rc.11",
+    "zod": "^3.21.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "rapper": "rapper --type normal --rapperPath \"src/rapper\" --apiUrl \"http://rap2api.taobao.org/repository/get?id=309776&token=ekuEPS-tnQ9q2NPsV42MIFkgS2r6idti\" --rapUrl \"http://rap2.taobao.org\""
+  },
+  "author": "",
+  "license": "ISC"
+}
